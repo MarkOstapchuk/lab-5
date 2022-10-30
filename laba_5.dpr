@@ -1,4 +1,4 @@
-п»їprogram laba_5;
+program laba_5;
 
 {$APPTYPE CONSOLE}
 
@@ -14,9 +14,9 @@ Type tmas=array[1..2000] of integer;
 var i, j: integer;
 begin
 num_sr:=0; num_ob:=0;
-  for i:=1 to size-1 do      //С†РёРєР» Рђ
+  for i:=1 to size-1 do      //цикл А
   begin
-    for j:=size downto i+1 do    // С†РёРєР» B
+    for j:=size downto i+1 do    // цикл B
     begin
       num_sr:=num_sr+1;
       if mas[j]<mas[j-1] then
@@ -34,10 +34,10 @@ num_sr:=0; num_ob:=0;
 var min: integer;
 begin
 num_sr:=0; num_ob:=0;
-  for i:=1 to size-1 do              // С†РёРєР» РЎ
+  for i:=1 to size-1 do              // цикл С
   begin
     min:=i;
-    for j:=i+1 to size do           // С†РёРєР» D
+    for j:=i+1 to size do           // цикл D
      begin
        num_sr:=num_sr+1;
       if mas1[j]<mas1[i] then
@@ -54,80 +54,80 @@ var i: integer;
 begin
 for i:=size downto size div 2 do
 begin
-temp1:=mas[i];                     //С†РёРєР» E
+temp1:=mas[i];                     //цикл E
 mas[i]:=mas[size-i+1];
 mas[size-i+1]:=temp1;
 end;
 end;
 begin
- writeln('| РўРёРї       | РЎРѕСЂС‚РёСЂРѕРІРєР° в„–1        | РЎРѕСЂС‚РёСЂРѕРІРєР° в„–2        | РЎРѕСЂС‚РёСЂРѕРІРєР° в„–3        |');
- writeln('| РјР°СЃСЃРёРІР°   |______________________|______________________|______________________|');
- writeln('|           | Р§РёСЃР»Рѕ     | Р§РёСЃР»Рѕ    | Р§РёСЃР»Рѕ     | Р§РёСЃР»Рѕ    | Р§РёСЃР»Рѕ     | Р§РёСЃР»Рѕ    |');
- writeln('|           | СЃСЂР°РІРЅРµРЅРёР№ | РѕР±РјРµРЅРѕРІ  | СЃСЂР°РІРЅРµРЅРёР№ | РѕР±РјРµРЅРѕРІ  | СЃСЂР°РІРЅРµРЅРёР№ | РѕР±РјРµРЅРѕРІ  |');
+ writeln('| Тип       | Сортировка №1        | Сортировка №2        | Сортировка №3        |');
+ writeln('| массива   |______________________|______________________|______________________|');
+ writeln('|           | Число     | Число    | Число     | Число    | Число     | Число    |');
+ writeln('|           | сравнений | обменов  | сравнений | обменов  | сравнений | обменов  |');
  writeln('|___________|___________|__________|___________|__________|___________|__________|');
- for k:=1 to 2000 do             // С†РёРєР» F
+ for k:=1 to 2000 do             // цикл F
   mas[k]:=random(100)-50;
  mas1:=mas;
  mas2:=mas;
  vial_sort(10,mas1, num_sr, num_ob);
- write('| 10 СЌР».    |    ',num_sr:3,'    |   ',num_ob:3,'    |');
+ write('| 10 эл.    |    ',num_sr:3,'    |   ',num_ob:3,'    |');
  dirchoice(10,mas2, num_sr, num_ob);
  writeln('    ',num_sr:3,'    |   ',num_ob:3,'    |');
- writeln('| РЅРµРѕС‚СЃРѕСЂС‚. |           |          |           |          |');
+ writeln('| неотсорт. |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  vial_sort(10,mas1, num_sr, num_ob);
- write('| 10 СЌР».    |    ',num_sr:3,'    |   ',num_ob:3,'    |');
+ write('| 10 эл.    |    ',num_sr:3,'    |   ',num_ob:3,'    |');
  dirchoice(10,mas2, num_sr, num_ob);
  writeln('    ',num_sr:3,'    |   ',num_ob:3,'    |');
- writeln('| РѕС‚СЃРѕСЂС‚.   |           |          |           |          |');
+ writeln('| отсорт.   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  revers(10,mas1);
  revers(10,mas2);
  vial_sort(10,mas1, num_sr, num_ob);
- write('| 10 СЌР». РѕР±СЂ|    ',num_sr:3,'    |   ',num_ob:3,'    |');
+ write('| 10 эл. обр|    ',num_sr:3,'    |   ',num_ob:3,'    |');
  dirchoice(10,mas2, num_sr, num_ob);
  writeln('    ',num_sr:3,'    |   ',num_ob:3,'    |');
- writeln('| РїРѕСЂСЏРґРѕРє   |           |          |           |          |');
+ writeln('| порядок   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  vial_sort(100,mas1, num_sr, num_ob);
- write('| 100 СЌР».   |    ',num_sr:4,'   |   ',num_ob:4,'   |');
+ write('| 100 эл.   |    ',num_sr:4,'   |   ',num_ob:4,'   |');
  dirchoice(100,mas2, num_sr, num_ob);
  writeln('    ',num_sr:4,'   |  ',num_ob:5,'   |');
- writeln('| РЅРµРѕС‚СЃРѕСЂС‚. |           |          |           |          |');
+ writeln('| неотсорт. |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  vial_sort(100,mas1, num_sr, num_ob);
- write('| 100 СЌР».   |    ',num_sr:4,'   |     ',num_ob,'    |');
+ write('| 100 эл.   |    ',num_sr:4,'   |     ',num_ob,'    |');
  dirchoice(100,mas2, num_sr, num_ob);
  writeln('    ',num_sr:4,'   |  ',num_ob:5,'   |');
- writeln('| РѕС‚СЃРѕСЂС‚.   |           |          |           |          |');
+ writeln('| отсорт.   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  revers(100,mas1);
  revers(100,mas2);
  vial_sort(100,mas1, num_sr, num_ob);
- write('|100 СЌР». РѕР±СЂ|    ',num_sr:4,'   |  ',num_ob:5,'   |');
+ write('|100 эл. обр|    ',num_sr:4,'   |  ',num_ob:5,'   |');
  dirchoice(100,mas2, num_sr, num_ob);
  writeln('    ',num_sr:4,'   |  ',num_ob:5,'   |');
- writeln('| РїРѕСЂСЏРґРѕРє   |           |          |           |          |');
+ writeln('| порядок   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  vial_sort(2000,mas1, num_sr, num_ob);
- write('| 2000 СЌР».  |  ',num_sr:7,'  |  ',num_ob:7,' |');
+ write('| 2000 эл.  |  ',num_sr:7,'  |  ',num_ob:7,' |');
  dirchoice(2000,mas2,num_sr, num_ob);
  writeln('  ',num_sr:7,'  |  ',num_ob:7,' |');
- writeln('| РЅРµРѕС‚СЃРѕСЂС‚. |           |          |           |          |');
+ writeln('| неотсорт. |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  vial_sort(2000,mas1, num_sr, num_ob);
- write('| 2000 СЌР».  |  ',num_sr:7,'  |   ',num_ob:3,'    |');
+ write('| 2000 эл.  |  ',num_sr:7,'  |   ',num_ob:3,'    |');
  dirchoice(2000,mas2, num_sr, num_ob);
  writeln('  ',num_sr:7,'  |  ',num_ob:7,' |');
- writeln('| РѕС‚СЃРѕСЂС‚.   |           |          |           |          |');
+ writeln('| отсорт.   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  revers(2000,mas1);
  revers(2000,mas2);
  vial_sort(2000,mas1, num_sr, num_ob);
- write('|2000 СЌР» РѕР±СЂ|  ',num_sr:7,'  | ',num_ob:7,'  |');
+ write('|2000 эл обр|  ',num_sr:7,'  | ',num_ob:7,'  |');
  dirchoice(2000,mas2,num_sr, num_ob);
  writeln('  ',num_sr:7,'  |  ',num_ob:7,' |');
- writeln('| РїРѕСЂСЏРґРѕРє   |           |          |           |          |');
+ writeln('| порядок   |           |          |           |          |');
  writeln('|___________|___________|__________|___________|__________|');
  readln;
 end.
